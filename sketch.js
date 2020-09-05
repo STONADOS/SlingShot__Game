@@ -14,6 +14,7 @@ var box1, box2, box3, box4, box5, box6, box7, box8, box9;
 var boxs1, boxs2, boxs3, boxs4, boxs5, boxs6, boxs7, boxs8, boxs9;
 var platform, platform2;
 var score = 0;
+var replays = 0;
 
 function preload(){
   backgroundimage = loadImage("sprites/back.png")
@@ -101,7 +102,9 @@ function draw(){
 
     fill("blue")
     text("PENTAGONS USED <" + score + ">" , 30, 190)
-    
+
+    text("REPLAYS <" + replays + ">" , 1100, 190)
+  
   }
 
 function mouseDragged(){
@@ -192,5 +195,6 @@ function keyPressed(){
     slingshot.attach(pentagon.body);
     gamestate = "on sling";
 
+    replays += 1;
   }
 }
